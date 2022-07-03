@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/paul/Coding/LithiumTranspiler'
-clang -Wall -Wextra -std=gnu17 -Wgnu-binary-literal -pedantic -ggdb -O2 -o csgc src/csgc.c -DuseClang
-make: Leaving directory `/Users/paul/Coding/LithiumTranspiler'
+make: Entering directory `/Users/paul/Coding/CaesiumCompiler'
+gcc -Wall -Wextra -std=gnu17 -Wgnu-binary-literal -pedantic -ggdb -O2 -o csgc src/csgc.c -DuseClang
+make: Leaving directory `/Users/paul/Coding/CaesiumCompiler'
  

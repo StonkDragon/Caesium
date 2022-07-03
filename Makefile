@@ -9,3 +9,7 @@ use-clang:
 
 use-gcc:
 	$(CC) $(CFLAGS) -o $(BINARY) $(SOURCE)
+
+run:
+	./$(BINARY) examples/Main.csg
+	./a.out

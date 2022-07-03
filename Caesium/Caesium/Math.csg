@@ -7,144 +7,144 @@ extern "C" {
 
 @Include <math.h>
 
-fn lmSin(f32 x) : f32 {
+fn cmSin(f32 x) : f32 {
     return sinf(x);
 }
 
-fn lmCos(f32 x) : f32 {
+fn cmCos(f32 x) : f32 {
     return cosf(x);
 }
 
-fn lmTan(f32 x) : f32 {
+fn cmTan(f32 x) : f32 {
     return tanf(x);
 }
 
-fn lmASin(f32 x) : f32 {
+fn cmASin(f32 x) : f32 {
     return asinf(x);
 }
 
-fn lmACos(f32 x) : f32 {
+fn cmACos(f32 x) : f32 {
     return acosf(x);
 }
 
-fn lmATan(f32 x) : f32 {
+fn cmATan(f32 x) : f32 {
     return atanf(x);
 }
 
-fn lmATan2(f32 y, f32 x) : f32 {
+fn cmATan2(f32 y, f32 x) : f32 {
     return atan2f(y, x);
 }
 
-fn lmSqrt(f32 x) : f32 {
+fn cmSqrt(f32 x) : f32 {
     return sqrtf(x);
 }
 
-fn lmInverseSqrt(f32 x) : f32 {
+fn cmInverseSqrt(f32 x) : f32 {
     return 1.0f / sqrtf(x);
 }
 
-fn lmCeil(f32 x) : f32 {
+fn cmCeil(f32 x) : f32 {
     return ceilf(x);
 }
 
-fn lmFloor(f32 x) : f32 {
+fn cmFloor(f32 x) : f32 {
     return floorf(x);
 }
 
-fn lmAbs(f32 x) : f32 {
+fn cmAbs(f32 x) : f32 {
     return fabsf(x);
 }
 
-fn lmMin(f32 x, f32 y) : f32 {
+fn cmMin(f32 x, f32 y) : f32 {
     return fminf(x, y);
 }
 
-fn lmMax(f32 x, f32 y) : f32 {
+fn cmMax(f32 x, f32 y) : f32 {
     return fmaxf(x, y);
 }
 
-fn lmLerp(f32 x, f32 y, f32 t) : f32 {
+fn cmLerp(f32 x, f32 y, f32 t) : f32 {
     return x + (y - x) * t;
 }
 
-fn lmClamp(f32 x, f32 min, f32 max) : f32 {
+fn cmClamp(f32 x, f32 min, f32 max) : f32 {
     return fmaxf(min, fminf(x, max));
 }
 
-fn lmSign(f32 x) : f32 {
+fn cmSign(f32 x) : f32 {
     return x < 0.0f ? -1.0f : 1.0f;
 }
 
-fn lmMod(f32 x, f32 y) : f32 {
+fn cmMod(f32 x, f32 y) : f32 {
     return fmodf(x, y);
 }
 
-fn lmRadians(f32 x) : f32 {
+fn cmRadians(f32 x) : f32 {
     return x * 0.0174532925f;
 }
 
-fn lmDegrees(f32 x) : f32 {
+fn cmDegrees(f32 x) : f32 {
     return x * 57.2957795f;
 }
 
-fn lmSinh(f32 x) : f32 {
+fn cmSinh(f32 x) : f32 {
     return sinhf(x);
 }
 
-fn lmCosh(f32 x) : f32 {
+fn cmCosh(f32 x) : f32 {
     return coshf(x);
 }
 
-fn lmTanh(f32 x) : f32 {
+fn cmTanh(f32 x) : f32 {
     return tanhf(x);
 }
 
-fn lmASinh(f32 x) : f32 {
+fn cmASinh(f32 x) : f32 {
     return asinhf(x);
 }
 
-fn lmACosh(f32 x) : f32 {
+fn cmACosh(f32 x) : f32 {
     return acoshf(x);
 }
 
-fn lmATanh(f32 x) : f32 {
+fn cmATanh(f32 x) : f32 {
     return atanhf(x);
 }
 
-fn lmExp(f32 x) : f32 {
+fn cmExp(f32 x) : f32 {
     return expf(x);
 }
 
-fn lmLog(f32 x) : f32 {
+fn cmLog(f32 x) : f32 {
     return logf(x);
 }
 
-fn lmLog2(f32 x) : f32 {
+fn cmLog2(f32 x) : f32 {
     return logf(x) / 0.6931471805f;
 }
 
-fn lmLog10(f32 x) : f32 {
+fn cmLog10(f32 x) : f32 {
     return logf(x) / 2.302585093f;
 }
 
-fn lmPow(f32 x, f32 y) : f32 {
+fn cmPow(f32 x, f32 y) : f32 {
     return powf(x, y);
 }
 
-fn lmExp2(f32 x) : f32 {
+fn cmExp2(f32 x) : f32 {
     return exp2f(x);
 }
 
-fn lmSmoothStep(f32 x) : f32 {
+fn cmSmoothStep(f32 x) : f32 {
     return x * x * (3.0f - 2.0f * x);
 }
 
-fn lmSmoothMin(f32 a, f32 b, f32 k) : f32 {
+fn cmSmoothMin(f32 a, f32 b, f32 k) : f32 {
     f32 res = exp(-k * a) + exp(-k * b);
     return -log(res) / k;
 }
 
-fn lmInverseSqrtF(f32 x) : f32 {
+fn cmInverseSqrtF(f32 x) : f32 {
     f32 xhalf = 0.5f * x;
     i32 i = * (i32*) &x;
     i = 0x5f3759df - (i >> 1);

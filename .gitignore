@@ -1,1 +1,4 @@
 csgc
+.vscode/*
+*.dSYM
+a.out

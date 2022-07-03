@@ -113,7 +113,7 @@ int main(int argc, char const *argv[])
         }
     }
 
-    int doCompile = strcmp(argv[2], "csg-nocomp") == 0;
+    int doCompile = argc >= 3 && strcmp(argv[2], "csg-nocomp") == 0;
 
     char* header_file = (char*) malloc(strlen(argv[1]) + 2);
     strcpy(header_file, argv[1]);
