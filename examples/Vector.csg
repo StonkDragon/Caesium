@@ -1,0 +1,12 @@
+fn main() : i32 {
+    // We are using the built-in `new` function to create a new vector.
+    // It takes the type as its first argument,
+    // and the data to be stored in the vector as its second argument.
+    vec2 a = new(vec2, 1.0, 2.0);
+    vec2 b = new(vec2, 3.0, 4.0);
+    vec2 c = new(vec2, a.x + b.x, a.y + b.y);
+    
+    print("c.x: %f, c.y: %f\n", c.x, c.y);
+
+    return 0;
+}

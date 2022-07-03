@@ -41,6 +41,15 @@ Examples can be found in the [examples](examples/) directory.
 | for | for-Loop statement |
 | any | Declare a type that can be any type |
 
+## Built-in Functions
+
+| Function | Description |
+| ------- | ----------- |
+| print | Print a string to the console |
+| panic | Print a string to the console and exit the program |
+| assert | Assert that a condition is true |
+| new | Create a new instance of a type |
+
 ## Preprocessor Directives
 
 The compiler translates these into C-like preprocessor directives.

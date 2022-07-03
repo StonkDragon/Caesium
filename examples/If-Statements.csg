@@ -1,0 +1,13 @@
+@Require <Caesium/System.csg>
+
+fn main() : i32 {
+    i32 a = 1;
+
+    print("Enter a number: ");
+
+    // Read a value from the console and convert it to an i32.
+    i32 b = strToI32(getInput());
+    
+    assert(a == b);
+    return 0;
+}

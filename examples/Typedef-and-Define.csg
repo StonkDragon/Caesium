@@ -1,0 +1,27 @@
+// Create a new type called `quaternion`
+// which has 4 fields called `x`, `y`, `z`, and `w`
+define {
+    i32 x;
+    i32 y;
+    i32 z;
+    i32 w;
+} quaternion;
+
+// Create a new type called `integer`
+// which wraps the built-in `i32` type
+typedef i32 integer;
+
+fn main() : i32 {
+    quaternion q;
+    q = new(quaternion, 1, 2, 3, 4);
+
+    print("%d %d %d %d\n", q.x, q.y, q.z, q.w);
+
+    integer x = q.x;
+    integer y = q.y;
+    integer z = q.z;
+    integer w = q.w;
+
+    print("%d %d %d %d\n", x, y, z, w);
+    return 0;
+}

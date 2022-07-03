@@ -9,7 +9,43 @@ extern "C" {
 @Include <stdlib.h>
 @Include <string.h>
 
+@Define stringEquals(a, b)               (strcmp(a, b) == 0)
+@Define stringEqualsIgnoreCase(a, b)     (strcasecmp(a, b) == 0)
+@Define stringStartsWith(a, b)           (strncmp(a, b, strlen(b)) == 0)
+
 const string caesium_version = "0.0.1";
+
+fn getInput() : string {
+    string buffer = nil;
+    size_t input_size;
+    getline(&buffer, &input_size, stdin);
+    buffer[strlen(buffer) - 1] = '\0';
+    return buffer;
+}
+
+fn strToI32(string str) : i32 {
+    return atoi(str);
+}
+
+fn strToI64(string str) : i64 {
+    return atoll(str);
+}
+
+fn strToF32(string str) : f32 {
+    return atof(str);
+}
+
+fn strToF64(string str) : f64 {
+    return atof(str);
+}
+
+fn strToBool(string str) : bool {
+    if (stringEquals(str, "true")) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 @Endif
 

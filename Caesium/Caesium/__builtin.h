@@ -11,7 +11,7 @@ extern "C" {
 
 #define _expectSemicolon    (void) 0x00
 #define define              typedef struct
-#define nil                 NULL
+#define nil                 ((void*) 0)
 #define true                1
 #define false               0
 
