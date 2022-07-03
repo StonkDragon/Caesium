@@ -1,0 +1,29 @@
+{
+    "name": "caesium",
+    "displayName": "Caesium",
+    "description": "Language Support for the Caesium Programming Language",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "caesium",
+            "aliases": ["Caesium", "caesium"],
+            "extensions": [".csg"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "caesium",
+            "scopeName": "source.caesium",
+            "path": "./syntaxes/caesium.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "caesium",
+            "path": "./snippets/snippets.code-snippets"
+        }]
+    }
+}

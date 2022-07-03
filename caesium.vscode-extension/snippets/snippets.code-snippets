@@ -1,0 +1,330 @@
+{
+    "Main Function": {
+		"scope": "source.caesium",
+		"prefix": "main",
+		"body": [
+			"fn main() : i32 {",
+			"    $0",
+			"    return 0;",
+			"}"
+		]
+	},
+	"Function": {
+		"scope": "source.caesium",
+		"prefix": "function",
+		"body": [
+			"fn ${1:element}($2) : ${3:void} {",
+			"    $0",
+			"}"
+		]
+	},
+	"function_header": {
+		"scope": "source.caesium",
+		"prefix": "function_header",
+		"body": [
+			"fn ${1:element}($2) : ${3:void};$0"
+		]
+	},
+	"print": {
+		"scope": "source.caesium",
+		"prefix": "print",
+		"body": [
+			"print($1);"
+		]
+	},
+	"panic": {
+		"scope": "source.caesium",
+		"prefix": "panic",
+		"body": [
+			"panic($1);"
+		]
+	},
+	"assert": {
+		"scope": "source.caesium",
+		"prefix": "assert",
+		"body": [
+			"assert($1);"
+		]
+	},
+	"if": {
+		"scope": "source.caesium",
+		"prefix": "if",
+		"body": [
+			"if ($1) {",
+			"    $0",
+			"}"
+		]
+	},
+	"else": {
+		"scope": "source.caesium",
+		"prefix": "else",
+		"body": [
+			"else {",
+			"    $0",
+			"}"
+		]
+	},
+	"for": {
+		"scope": "source.caesium",
+		"prefix": "for",
+		"body": [
+			"for (${1:i32} ${2:i} = ${3:0}; ${2:i} < $4; ${2:i}++) {",
+			"    $0",
+			"}"
+		]
+	},
+	"while": {
+		"scope": "source.caesium",
+		"prefix": "while",
+		"body": [
+			"while ($1) {",
+			"    $0",
+			"}"
+		]
+	},
+	"switch": {
+		"scope": "source.caesium",
+		"prefix": "switch",
+		"body": [
+			"switch ($1) {",
+			"    case $2:",
+			"        $0",
+			"        break;",
+			"    default:",
+			"        break;",
+			"}"
+		]
+	},
+	"case": {
+		"scope": "source.caesium",
+		"prefix": "case",
+		"body": [
+			"case $1:",
+			"    $0",
+			"    break;"
+		]
+	},
+	"default": {
+		"scope": "source.caesium",
+		"prefix": "default",
+		"body": [
+			"default:",
+			"    $0",
+			"    break;"
+		]
+	},
+	"return": {
+		"scope": "source.caesium",
+		"prefix": "return",
+		"body": [
+			"return $1;"
+		]
+	},
+	"break": {
+		"scope": "source.caesium",
+		"prefix": "break",
+		"body": [
+			"break;"
+		]
+	},
+	"continue": {
+		"scope": "source.caesium",
+		"prefix": "continue",
+		"body": [
+			"continue;"
+		]
+	},
+	"struct": {
+		"scope": "source.caesium",
+		"prefix": "struct",
+		"body": [
+			"struct ${1:struct} {",
+			"    $0",
+			"};"
+		]
+	},
+	"enum": {
+		"scope": "source.caesium",
+		"prefix": "enum",
+		"body": [
+			"enum ${1:enum} {",
+			"    $0",
+			"};"
+		]
+	},
+	"union": {
+		"scope": "source.caesium",
+		"prefix": "union",
+		"body": [
+			"union ${1:union} {",
+			"    $0",
+			"};"
+		]
+	},
+	"declare": {
+		"scope": "source.caesium",
+		"prefix": "declare",
+		"body": [
+			"declare {",
+			"    $1",
+			"} $0;"
+		]
+	},
+
+	"@Include": {
+		"scope": "source.caesium",
+		"prefix": "@Include",
+		"body": "@Include \"${1:file}\""
+	},
+	"@RequireLocal": {
+		"scope": "source.caesium",
+		"prefix": "@Require",
+		"body": "@Require \"${1:file}\""
+	},
+	"@RequireGlobal": {
+		"scope": "source.caesium",
+		"prefix": ["@RequireStatic", "@Import"],
+		"body": "@Require <${1:file}>"
+	},
+	"@Ifdef": {
+		"scope": "source.caesium",
+		"prefix": "@Ifdef",
+		"body": "@Ifdef $0"
+	},
+	"@Ifndef": {
+		"scope": "source.caesium",
+		"prefix": "@Ifndef",
+		"body": "@Ifndef $0"
+	},
+	"@Endif": {
+		"scope": "source.caesium",
+		"prefix": "@Endif",
+		"body": "@Endif"
+	},
+	"@If": {
+		"scope": "source.caesium",
+		"prefix": "@If",
+		"body": "@If $0"
+	},
+	"@Else": {
+		"scope": "source.caesium",
+		"prefix": "@Else",
+		"body": "@Else"
+	},
+	"@Define": {
+		"scope": "source.caesium",
+		"prefix": "@Define",
+		"body": "@Define $0"
+	},
+	"@Undef": {
+		"scope": "source.caesium",
+		"prefix": "@Undef",
+		"body": "@Undef $0"
+	},
+	"@Elif": {
+		"scope": "source.caesium",
+		"prefix": "@Elif",
+		"body": "@Elif $0"
+	},
+
+	"i8": {
+		"scope": "source.caesium",
+		"prefix": "i8",
+		"body": "i8"
+	},
+	"i16": {
+		"scope": "source.caesium",
+		"prefix": "i16",
+		"body": "i16"
+	},
+	"i32": {
+		"scope": "source.caesium",
+		"prefix": "i32",
+		"body": "i32"
+	},
+	"i64": {
+		"scope": "source.caesium",
+		"prefix": "i64",
+		"body": "i64"
+	},
+	"f32": {
+		"scope": "source.caesium",
+		"prefix": "f32",
+		"body": "f32"
+	},
+	"f64": {
+		"scope": "source.caesium",
+		"prefix": "f64",
+		"body": "f64"
+	},
+	"bool": {
+		"scope": "source.caesium",
+		"prefix": "bool",
+		"body": "bool"
+	},
+	"int2": {
+		"scope": "source.caesium",
+		"prefix": "int2",
+		"body": "int2"
+	},
+	"int3": {
+		"scope": "source.caesium",
+		"prefix": "int3",
+		"body": "int3"
+	},
+	"int4": {
+		"scope": "source.caesium",
+		"prefix": "int4",
+		"body": "int4"
+	},
+	"vec2": {
+		"scope": "source.caesium",
+		"prefix": "vec2",
+		"body": "vec2"
+	},
+	"vec3": {
+		"scope": "source.caesium",
+		"prefix": "vec3",
+		"body": "vec3"
+	},
+	"vec4": {
+		"scope": "source.caesium",
+		"prefix": "vec4",
+		"body": "vec4"
+	},
+	"string": {
+		"scope": "source.caesium",
+		"prefix": "string",
+		"body": "string"
+	},
+	"nil": {
+		"scope": "source.caesium",
+		"prefix": "nil",
+		"body": "nil"
+	},
+	"true": {
+		"scope": "source.caesium",
+		"prefix": "true",
+		"body": "true"
+	},
+	"false": {
+		"scope": "source.caesium",
+		"prefix": "false",
+		"body": "false"
+	},
+	"void": {
+		"scope": "source.caesium",
+		"prefix": "void",
+		"body": "void"
+	},
+	"any": {
+		"scope": "source.caesium",
+		"prefix": "any",
+		"body": "any"
+	},
+	"register": {
+		"scope": "source.caesium",
+		"prefix": "register",
+		"body": "register"
+	}
+}

@@ -1,0 +1,107 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Caesium",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#block_comments"
+		},
+		{
+			"include": "#preproc"
+		},
+		{
+			"include": "#preproc_string"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#funcs"
+		},
+		{
+			"include": "#words"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"preproc": {
+			"patterns": [
+				{
+					"name": "keyword",
+					"match": "(@Include|@Ifdef|@Define|@Endif|@Ifndef|@If|@Undef|@Else|@Error|@Require)"
+				}
+			]
+		},
+		"comments": {
+			"name": "string.comment",
+			"begin": "//",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "\\\\."
+				}
+			]
+		},
+		"block_comments": {
+			"name": "string.comment",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "\\\\."
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword",
+					"match": "\\b(return|const|define|typedef|fn|void|i32|i64|i16|i8|u32|u64|u16|u8|f64|f32|bool|int2|int3|int4|vec2|vec3|vec4|string|struct|true|false|nil|if|else|while|do|for|any)\\b"
+				}
+			]
+		},
+		"funcs": {
+			"patterns": [
+				{
+					"name": "entity.name",
+					"match": "[A-Za-z0-9_]+\\("
+				}
+			]
+		},
+		"words": {
+			"patterns": [
+				{
+					"name": "variable",
+					"match": "[A-Za-z0-9_]+"
+				}
+			]
+		},
+		"strings": {
+			"name": "entity.name.tag",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "\\\\."
+				}
+			]
+		},
+		"preproc_string": {
+			"name": "entity.name.tag",
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "\\<[A-Za-z0-9_/\\\\.]+\\>"
+				}
+			]
+		}
+	},
+	"scopeName": "source.caesium"
+}

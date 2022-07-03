@@ -1,0 +1,18 @@
+@Ifdef __cplusplus
+extern "C" {
+@Endif
+
+@Ifndef _caesium_system_h_
+@Define _caesium_system_h_
+
+@Include <stdio.h>
+@Include <stdlib.h>
+@Include <string.h>
+
+const string caesium_version = "0.0.1";
+
+@Endif
+
+@Ifdef __cplusplus
+}
+@Endif
