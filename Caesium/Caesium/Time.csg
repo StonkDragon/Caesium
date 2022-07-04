@@ -1,0 +1,23 @@
+@Ifdef __cplusplus
+extern "C" {
+@Endif
+
+@Include <time.h>
+@Include <errno.h>
+
+fn unixEpoch() : u64 {
+    return time(nil);
+}
+
+fn unixTimeMillis() : u64 {
+    struct timespec spec;
+    if (clock_gettime(CLOCK_REALTIME, &spec) == -1) {
+        panic("Unix time error: %s\n", strerror(errno));
+    }
+
+    return spec.tv_sec * 1000 + spec.tv_nsec / 1e6;
+}
+
+@Ifdef __cplusplus
+}
+@Endif

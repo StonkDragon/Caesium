@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define TMP_FILE ".csgc_temporary_files.tmp"
 #ifdef WIN32
 #include <io.h>
 #define F_OK 0
@@ -144,9 +145,13 @@ int main(int argc, char const *argv[])
 
     FILE *out = fopen(out_file, "w");
 
-    printf("[CSGC] Compiling '%s'\n", out_file);
+    char* tmp = (char*) malloc(strlen(out_file));
+    strcpy(tmp, out_file);
+    tmp[strlen(tmp) - 2] = '\0';
 
-    FILE* msg_channel = fopen("/private/var/tmp/csgc_message_channel.txt", "a");
+    printf("[CSGC] Compiling '%s'\n", tmp);
+
+    FILE* msg_channel = fopen(TMP_FILE, "a");
     fprintf(msg_channel, "%s\n", out_file);
     fclose(msg_channel);
 
@@ -188,7 +193,7 @@ int main(int argc, char const *argv[])
                     
                     printf("[CSGC] Require '%s'\n", require_file);
 
-                    msg_channel = fopen("/private/var/tmp/csgc_message_channel.txt", "a");
+                    msg_channel = fopen(TMP_FILE, "a");
                     fprintf(msg_channel, "%s\n", require_file);
                     fclose(msg_channel);
 
@@ -228,7 +233,7 @@ int main(int argc, char const *argv[])
                     fprintf(out, "#endif\n");
                     required[requiredCount] = strdup(require_file_c);
                     
-                    msg_channel = fopen("/private/var/tmp/csgc_message_channel.txt", "a");
+                    msg_channel = fopen(TMP_FILE, "a");
                     fprintf(msg_channel, "%s.c\n", require_file_c);
                     fclose(msg_channel);
 
@@ -289,7 +294,7 @@ int main(int argc, char const *argv[])
             strcpy(require_file, require);
             strcat(require_file, ".c");
             
-            msg_channel = fopen("/private/var/tmp/csgc_message_channel.txt", "a");
+            msg_channel = fopen(TMP_FILE, "a");
             fprintf(msg_channel, "%s\n", require_file);
             fclose(msg_channel);
 
@@ -322,20 +327,19 @@ int main(int argc, char const *argv[])
 
     int compileResult = system(compilerCommand);
 
-    msg_channel = fopen("/private/var/tmp/csgc_message_channel.txt", "r");
+    msg_channel = fopen(TMP_FILE, "r");
     fseek(msg_channel, 0, SEEK_END);
     long msg_channel_size = ftell(msg_channel);
     fseek(msg_channel, 0, SEEK_SET);
     char* msg_channel_buffer = malloc(msg_channel_size + 1);
     fread(msg_channel_buffer, 1, msg_channel_size, msg_channel);
     fclose(msg_channel);
-    remove("/private/var/tmp/csgc_message_channel.txt");
+    remove(TMP_FILE);
     char* msg_channel_token = strtok(msg_channel_buffer, "\n");
 
     while (msg_channel_token != NULL) {
         char* require_file = malloc(strlen(msg_channel_token) + 3);
         strcpy(require_file, msg_channel_token);
-        printf("[CSGC] Deleting Temp file '%s'\n", require_file);
         remove(require_file);
         free(require_file);
         msg_channel_token = strtok(NULL, "\n");

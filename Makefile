@@ -10,10 +10,6 @@ use-clang:
 use-gcc:
 	$(CC) $(CFLAGS) -o $(BINARY) $(SOURCE)
 
-run:
-	./$(BINARY) examples/Main.csg -w
-	./a.out
-
 For-Loop:
 	./$(BINARY) examples/For-Loop.csg
 	./a.out
@@ -41,3 +37,7 @@ Vector:
 While-Loop:
 	./$(BINARY) examples/While-Loop.csg
 	./a.out
+
+CLI-Args:
+	./$(BINARY) examples/CLI-Args.csg
+	./a.out 1 2 3 "Hello World" "This is a test"

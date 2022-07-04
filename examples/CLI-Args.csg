@@ -1,0 +1,9 @@
+fn main(i32 argc, string argv[]) : i32 {
+    // Loop over the command line arguments
+    // and print them.
+    for (i32 i = 0; i < argc; i++) {
+        print("argv[%d] = %s\n", i, argv[i]);
+    }
+
+    return 0;
+}
